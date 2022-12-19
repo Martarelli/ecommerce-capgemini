@@ -1,3 +1,5 @@
+import { IProdutoCarrinho } from './../produtos';
+import { CarrinhoService } from './../carrinho.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarrinhoComponent implements OnInit {
 
-  constructor() { }
+  itensCarrinho: IProdutoCarrinho[] = [];
+
+  constructor(
+    public carrinhoService: CarrinhoService
+  ) { }
 
   ngOnInit(): void {
+    this.itensCarrinho = this.carrinhoService.obtemCarrinho();
   }
 
 }
