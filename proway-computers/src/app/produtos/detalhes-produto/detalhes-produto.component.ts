@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetalhesProdutoComponent implements OnInit {
   produto: IProduto | undefined;
+  quantidade = 1;
 
   constructor(
     private produtosService: ProdutosService,
